@@ -1,20 +1,23 @@
 <script setup lang='ts'>
-
 async function getStartedClicked() {
-  console.log('get started clicked');  
+  // console.log('get started clicked');
 }
+
+// detect scrolling
+const { x, y } = useWindowScroll()
 </script>
 
 <template>
-  <div >
-    <div class="sticky top-0 backdrop-blur bg-white/60 dark:bg-gray-900/60">
+  <div>
+    <div :class="y>10 ? 'backdrop-blur bg-white/90 dark:bg-gray-900/90 sticky top-0 py-3' :'bg-transparent relative py-5'"
+class="ease duration-75">
       <UContainer>
         <TemplateHeaderDesktop @get-started="getStartedClicked" />
       </UContainer>
     </div>
-  <div>
-    <slot />
-  </div>
+    <div>
+      <slot />
+    </div>
 
     <UContainer>
       <TemplateFooterDesktop />
