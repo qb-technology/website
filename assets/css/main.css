@@ -4,13 +4,13 @@
 
 @layer base{
     body{
-        @apply bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-200 antialiased font-sans
+        @apply bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-200 antialiased font-sans text-sm
     }
     header{
         @apply h-16
     }
 
     .cont_bg{
-        @apply bg-gray-50 dark:bg-gray-950/80
+        @apply bg-primary-50 dark:bg-gray-950/80
     }
 }

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 async function getStartedClicked() {
-  // console.log('get started clicked');
+  
 }
 
 // detect scrolling
