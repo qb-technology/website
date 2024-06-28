@@ -9,7 +9,7 @@ const { x, y } = useWindowScroll()
 
 <template>
   <div>
-    <div :class="y>10 ? 'backdrop-blur bg-white/90 dark:bg-gray-900/90 sticky top-0 py-3' :'bg-transparent relative py-5'"
+    <div :class="y>10 ? 'backdrop-blur bg-white/90 dark:bg-gray-900/90 sticky top-0 py-3 z-10' :'bg-transparent relative py-5'"
 class="ease duration-75">
       <UContainer>
         <TemplateHeaderDesktop @get-started="getStartedClicked" />
