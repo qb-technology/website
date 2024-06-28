@@ -7,6 +7,7 @@ export default <Partial<Config>>{
                 auto: 'auto',
                 square: '1 / 1',
                 video: '16 / 9',
+                project:'176/119'
             },
             screens: {
                 xs: '430px',

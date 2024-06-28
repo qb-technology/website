@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         process.env.NODE_ENV == 'production' ? 'github:qb-technology/content' : '../qbContent',
     ],
     modules: [// '@logto/nuxt',
-        '@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/seo', '@vueuse/nuxt'],
+    '@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/seo', '@vueuse/nuxt', '@nuxtjs/device'],
     css: [
         '~/assets/css/main.css',
     ],

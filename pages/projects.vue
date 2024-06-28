@@ -4,7 +4,7 @@ const isDark = useColorMode()
 
 const integrations = [
     'cloudflare.svg', 'vercel.svg', 'aws-amplify.svg', 'digitalocean.svg', 'heroku.svg', 'netlify.svg', 'cleavr.svg', 'stormkit.webp', 'sanity.svg',
-    'algolia.svg', 'meilisearch.svg', 'directus.svg','postgresql.svg','mongodb.svg','appwrite.svg','nhost.svg', 'firebase.svg', 'supabase.svg', 'render.png', 'sentry.svg', 'shopify.svg', 'snipcart.svg', 'medusa-js.svg', 'nuxthub.svg', 'storyblok.svg', 'strapi.svg', 'stripe.svg', 'tailwind.svg', 'wordpress.svg']
+    'algolia.svg', 'meilisearch.svg', 'directus.svg', 'postgresql.svg', 'mongodb.svg', 'appwrite.svg', 'nhost.svg', 'firebase.svg', 'supabase.svg', 'render.png', 'sentry.svg', 'shopify.svg', 'snipcart.svg', 'medusa-js.svg', 'nuxthub.svg', 'storyblok.svg', 'strapi.svg', 'stripe.svg', 'tailwind.svg', 'wordpress.svg']
 </script>
 
 <template>
@@ -14,7 +14,12 @@ const integrations = [
                 <TemplateSectionV3 class="flex flex-col justify-center items-center md:flex-row"
                                    :section-text="{ h1: 'Our Works', caption: { label: 'Projects' }, p: 'Nec massa viverra eget feugiat pellentesque. Feugiat adipiscing massa vitae auctor mi massa. Sodales libero viverra cursus sed duis luctus nulla. In malesuada vulputate pharetra ipsum orci.' }"
                 >
-                    <NuxtImg src="/r2/projectPageHero.png" />
+                    <div class="w-full relative h-fit">
+                        <NuxtImg src="/r2/projectPageHero.png"
+                                 :width="$device.isMobile ? 400 : 600"
+                                 class=""
+                        />
+                    </div>
                 </TemplateSectionV3>
             </UContainer>
         </div>
@@ -30,6 +35,7 @@ const integrations = [
                                           image="https://picsum.photos/400"
                                           favicon="https://picsum.photos/50"
                                           :is-active="i==0"
+                                          class="bg-gray-100 dark:bg-gray-900 shadow rounded-sm"
                         />
                     </div>
                 </TemplateSectionV3>
