@@ -11,14 +11,14 @@ export default defineNuxtConfig({
         },
         port: 443,
     },
-    app:{
-        head:{
-            htmlAttrs:{
-                lang:'en',
-            }
+    app: {
+        head: {
+            htmlAttrs: {
+                lang: 'en',
+            },
         },
-        buildAssetsDir:"/qb_technology_assets/",
-        rootId:"__qbtechnology"
+        buildAssetsDir: '/qb_technology_assets/',
+        rootId: '__qbtechnology',
     },
     site: {
         url: process.env.SITE_URL,
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         process.env.NODE_ENV == 'production' ? 'github:qb-technology/content' : '../qbContent',
     ],
     modules: [// '@logto/nuxt',
-    '@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/seo', '@vueuse/nuxt', '@nuxtjs/device'],
+        '@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/seo', '@vueuse/nuxt', '@nuxtjs/device', '@nuxtjs/supabase'],
     css: [
         '~/assets/css/main.css',
     ],
@@ -59,25 +59,25 @@ export default defineNuxtConfig({
         domains: [process.env.STORAGE_BUCKET_URL ?? ''],
         quality: 90,
         format: ['webp', 'avif', 'png', 'jpg'],
-        alias:{
-            r2:process.env.STORAGE_BUCKET_URL || 'https://r2.qbtech.dev/'
+        alias: {
+            r2: process.env.STORAGE_BUCKET_URL || 'https://r2.qbtech.dev/',
         },
-        presets:{
-            proFavicon:{
-                modifiers:{
-                    format:'webp',
-                    width:35,
-                    height:35
-                }
+        presets: {
+            proFavicon: {
+                modifiers: {
+                    format: 'webp',
+                    width: 35,
+                    height: 35,
+                },
             },
-            proImage:{
-                modifiers:{
-                    format:'webp',
-                    width:352,
-                    height:238
-                }
+            proImage: {
+                modifiers: {
+                    format: 'webp',
+                    width: 352,
+                    height: 238,
+                },
             },
-        }
+        },
     },
     eslint: {
         config: {
@@ -88,9 +88,12 @@ export default defineNuxtConfig({
 
         },
     },
-    nitro:{
-        prerender:{
-            autoSubfolderIndex: false
-        }
-    }
+    nitro: {
+        prerender: {
+            autoSubfolderIndex: false,
+        },
+    },
+    supabase: {
+        redirect: false,
+    },
 })

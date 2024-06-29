@@ -3,8 +3,8 @@ const storage_url = useRuntimeConfig().public.storage_bucket_url
 const isDark = useColorMode()
 
 const integrations = [
-    'cloudflare.svg', 'vercel.svg', 'aws-amplify.svg', 'digitalocean.svg', 'heroku.svg', 'netlify.svg', 'cleavr.svg', 'stormkit.webp', 'sanity.svg',
-    'algolia.svg', 'meilisearch.svg', 'directus.svg', 'postgresql.svg', 'mongodb.svg', 'appwrite.svg', 'nhost.svg', 'firebase.svg', 'supabase.svg', 'render.png', 'sentry.svg', 'shopify.svg', 'snipcart.svg', 'medusa-js.svg', 'nuxthub.svg', 'storyblok.svg', 'strapi.svg', 'stripe.svg', 'tailwind.svg', 'wordpress.svg']
+    'cloudflare.svg', 'vercel.svg', 'aws-amplify.svg', 'digitalocean.svg', 'heroku.svg', 'netlify.svg', 'cleavr.svg', 'stormkit.webp','render.png', 'sanity.svg',
+    'algolia.svg', 'meilisearch.svg', 'directus.svg', 'postgresql.svg', 'mongodb.svg', 'appwrite.svg', 'nhost.svg', 'firebase.svg', 'supabase.svg',  'sentry.svg', 'shopify.svg', 'snipcart.svg', 'medusa-js.svg', 'nuxthub.svg', 'storyblok.svg', 'strapi.svg', 'stripe.svg', 'wordpress.svg', 'tailwind.svg','figma.svg']
 </script>
 
 <template>
@@ -73,7 +73,7 @@ const integrations = [
                 >
                     <div class="flex items-center gap-4">
                         <UButton label="Get Started"
-                                 icon="i-heroicons-arrow-right"
+                                 trailing-icon="i-heroicons-arrow-right"
                         />
                     </div>
                 </TemplateSectionV2>
