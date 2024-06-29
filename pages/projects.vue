@@ -5,6 +5,8 @@ const isDark = useColorMode()
 const integrations = [
     'cloudflare.svg', 'vercel.svg', 'aws-amplify.svg', 'digitalocean.svg', 'heroku.svg', 'netlify.svg', 'cleavr.svg', 'stormkit.webp','render.png', 'sanity.svg',
     'algolia.svg', 'meilisearch.svg', 'directus.svg', 'postgresql.svg', 'mongodb.svg', 'appwrite.svg', 'nhost.svg', 'firebase.svg', 'supabase.svg',  'sentry.svg', 'shopify.svg', 'snipcart.svg', 'medusa-js.svg', 'nuxthub.svg', 'storyblok.svg', 'strapi.svg', 'stripe.svg', 'wordpress.svg', 'tailwind.svg','figma.svg']
+
+const {project} = storeToRefs(useProjectsStore())
 </script>
 
 <template>
@@ -30,13 +32,18 @@ const integrations = [
                                    :section-text="{ h2: 'Completed Projects' }"
                 >
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
-                        <ProjectListingV1 v-for="i of [0, 1, 2, 3, 4, 5]"
+                        <template v-if="project.length">
+                            <ProjectListingV1 v-for="(item, i) of project"
                                           :key="i"
-                                          image="https://picsum.photos/400"
-                                          favicon="https://picsum.photos/50"
+                                          :image="'/r2/' +item.image.trim()"
+                                          :favicon="'/r2/'+(item.favicon.trim())"
+                                          :desc="(item.desc)"
+                                          :title="(item.title)"
+                                          :to="(item.link)"
                                           :is-active="i==0"
                                           class="bg-gray-100 dark:bg-gray-900 shadow rounded-sm"
                         />
+                        </template>
                     </div>
                 </TemplateSectionV3>
             </UContainer>
@@ -68,7 +75,7 @@ const integrations = [
         <div class="cont_bg">
             <UContainer>
                 <TemplateSectionV2
-                    :section-text="{ h2: 'Get started today', p: 'Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed. Commodo in viverra nunc, ' }"
+                    :section-text="{ h2: 'Get started today', p: 'We are ever ready and committed to help actualize your vision for your business. Click below to be our next success story ' }"
                     layout-orientation="center"
                 >
                     <div class="flex items-center gap-4">

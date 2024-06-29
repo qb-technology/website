@@ -6,6 +6,9 @@ useHead({
 const services = [1, 2, 3, 4, 5, 6]
 const colorMode = useColorMode()
 const storage_url = useRuntimeConfig().public.storage_bucket_url
+
+const {data,error,pending} = await useFetch('/api/homepage')
+
 </script>
 
 <template>
@@ -68,11 +71,12 @@ const storage_url = useRuntimeConfig().public.storage_bucket_url
 
         <div class="">
             <UContainer>
-                <TemplateSectionV2 :section-text="{ h2: 'Why choose our service?', p: 'Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed. Commodo in viverra nunc, ', caption: { label: 'Features' } }"
+                <TemplateSectionV2 :section-text="{ h2: 'Why choose our service?', p: 'Discover our top-tier web design and development solutions tailored for your success.', caption: { label: 'Features' } }"
                                    layout-orientation="center"
                 >
                     <div class="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 md:gap-12 lg:gap-16">
-                        <ServiceV1 v-for="(service, key) of services"
+                        <ServiceV1 v-for="(service, key) of data.services.data"
+                                    v-bind="service"
                                    :key="key"
                                    class="bg-gray-200/50 dark:bg-gray-950/50 shadow-md"
                         />
@@ -107,7 +111,7 @@ const storage_url = useRuntimeConfig().public.storage_bucket_url
 
         <UContainer>
             <TemplateSectionV2
-                :section-text="{ h2: 'Get started today', p: 'Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed. Commodo in viverra nunc, ' }"
+                :section-text="{ h2: 'Get started today', p: 'We are ever ready and committed to help actualize your vision for your business. Click below to be our next success story' }"
                 layout-orientation="center"
             >
                 <div class="flex items-center gap-4">
