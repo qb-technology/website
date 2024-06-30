@@ -147,7 +147,7 @@ export type Database = {
         }
         Relationships: []
       }
-      service: {
+      service_features: {
         Row: {
           created_at: string
           description: string | null
