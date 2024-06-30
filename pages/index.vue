@@ -7,7 +7,8 @@ const services = [1, 2, 3, 4, 5, 6]
 const colorMode = useColorMode()
 const storage_url = useRuntimeConfig().public.storage_bucket_url
 
-const {data,error,pending} = await useFetch('/api/homepage')
+// const {data,error,pending} = await useFetch('/api/homepage')
+const {features} = storeToRefs(useServiceFeatureStore())
 
 </script>
 
@@ -75,7 +76,7 @@ const {data,error,pending} = await useFetch('/api/homepage')
                                    layout-orientation="center"
                 >
                     <div class="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 md:gap-12 lg:gap-16">
-                        <ServiceV1 v-for="(service, key) of data.services.data"
+                        <ServiceV1 v-for="(service, key) of features"
                                     v-bind="service"
                                    :key="key"
                                    class="bg-gray-200/50 dark:bg-gray-950/50 shadow-md"

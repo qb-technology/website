@@ -20,7 +20,7 @@ const { x, y } = useWindowScroll()
             <slot />
         </div>
 
-        <div class="bg-primary-100 dark:bg-gray-800/80">
+        <div class="bg-primary-100 dark:bg-gray-950/50">
             <UContainer>
                 <TemplateFooterDesktop />
             </UContainer>

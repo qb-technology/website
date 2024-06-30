@@ -44,9 +44,9 @@ export default defineNuxtConfig({
         global: true,
     },
     fonts: {
-        families: [
-            { name: 'Inter', provider: 'google' },
-        ],
+        // families: [
+        //     { name: 'Inter', provider: 'google' },
+        // ],
     },
     // logto:{
     //   pathnames:{

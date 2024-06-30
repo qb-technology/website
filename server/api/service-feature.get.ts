@@ -6,9 +6,5 @@ export default defineEventHandler(async (event) => {
     client.from('service').select('title,description,icon'),
   ])
 
-  return {
-    services: {
-      data: services.data || null,
-    },
-  }
+  return services.data
 })
