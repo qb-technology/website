@@ -8,6 +8,13 @@ const storage_url = useRuntimeConfig().public.storage_bucket_url
 
 // const {data,error,pending} = await useFetch('/api/homepage')
 const { services } = storeToRefs(useServiceStore())
+
+const messages = [
+    'Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum. Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum.',
+    'Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in .',
+    'Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum.',
+    'Elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum.',
+]
 </script>
 
 <template>
@@ -56,7 +63,9 @@ const { services } = storeToRefs(useServiceStore())
                                    layout-orientation="center"
                                    p="lg:pt-12"
                 >
-                    <div class="flex flex-col md:flex-row flex-nowrap md:flex-wrap items-center justify-center md:justify-between gap-10 md:gap-5 w-full">
+                    <div
+                        class="flex flex-col md:flex-row flex-nowrap md:flex-wrap items-center justify-center md:justify-between gap-10 md:gap-5 w-full"
+                    >
                         <TechLogoCloudflare />
                         <TechLogoRailway />
                         <TechLogoHetzner />
@@ -70,14 +79,21 @@ const { services } = storeToRefs(useServiceStore())
 
         <div class="">
             <UContainer>
-                <TemplateSectionV2 :section-text="{ h2: 'Service Category', caption: { label: 'Services' } }"
-                                   layout-orientation="center"
+                <TemplateSectionV2
+                    :section-text="{ h2: 'What we do', caption: { label: 'Our services' }, p: 'We offer professional, comprehensive range of services to meet all your business needs.' }"
+                    layout-orientation="center"
                 >
                     <div class="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 md:gap-12 lg:gap-16">
                         <ServiceV1 v-for="(service, key) of services"
                                    v-bind="service"
                                    :key="key"
-                                   class="bg-gray-200/50 dark:bg-gray-950/50 shadow-md"
+                                   class="shadow-md alternate_cont_bg"
+                        />
+                    </div>
+
+                    <div class="grid place-content-center gap-4 pt-8 md:pt-10 lg:pt-12">
+                        <UButton label="Learn More"
+                                 to="/services"
                         />
                     </div>
                 </TemplateSectionV2>
@@ -86,22 +102,15 @@ const { services } = storeToRefs(useServiceStore())
 
         <div class="cont_bg">
             <UContainer>
-                <TemplateSectionV2 :section-text="{ h2: 'What Our Clients Are Saying', caption: { label: 'Testimony' } }"
-                                   layout-orientation="center"
+                <TemplateSectionV2
+                    :section-text="{ h2: 'What Our Clients Are Saying', caption: { label: 'Testimony' } }"
+                    layout-orientation="center"
                 >
                     <div class="column-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-                        <TestimonialV1 class="break-inside-avoid"
-                                       msg="Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum. Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum."
-                        />
-                        <TestimonialV1 class="break-inside-avoid" />
-                        <TestimonialV1 class="break-inside-avoid"
-                                       msg="Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in ."
-                        />
-                        <TestimonialV1 class="break-inside-avoid"
-                                       msg="Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum."
-                        />
-                        <TestimonialV1 class="break-inside-avoid"
-                                       msg="Elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum."
+                        <TestimonialV1 v-for="(item, ind) of messages"
+                                       :key="ind"
+                                       class="break-inside-avoid"
+                                       :msg="item"
                         />
                     </div>
                 </TemplateSectionV2>

@@ -14,7 +14,7 @@ const {project} = storeToRefs(useProjectsStore())
         <div>
             <UContainer>
                 <TemplateSectionV3 class="flex flex-col justify-center items-center md:flex-row"
-                                   :section-text="{ h1: 'Our Works', caption: { label: 'Projects' }, p: 'Nec massa viverra eget feugiat pellentesque. Feugiat adipiscing massa vitae auctor mi massa. Sodales libero viverra cursus sed duis luctus nulla. In malesuada vulputate pharetra ipsum orci.' }"
+                                   :section-text="{ h1: 'Our Works', caption: { label: 'Projects' }, p: 'Discover our portfolio showcasing successful projects and satisfied clients. See how our digital solutions have transformed businesses.' }"
                 >
                     <div class="w-full relative h-fit">
                         <NuxtImg src="/r2/projectPageHero.png"
