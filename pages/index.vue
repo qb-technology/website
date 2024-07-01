@@ -86,6 +86,7 @@ const messages = [
                     <div class="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 md:gap-12 lg:gap-16">
                         <ServiceV1 v-for="(service, key) of services"
                                    v-bind="service"
+                                   :handle="`/services${service.handle ? '/'+service.handle : '#'}`"
                                    :key="key"
                                    class="shadow-md alternate_cont_bg"
                         />

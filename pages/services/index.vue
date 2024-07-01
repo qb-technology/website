@@ -56,7 +56,7 @@ const messages = [
                     <div class="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 md:gap-12 lg:gap-16">
                         <ServiceV1 v-for="(service, key) of services"
                                    v-bind="service"
-                                   :handle="`/service${service.handle ? '/'+service.handle : '#'}`"
+                                   :handle="`/services${service.handle ? '/'+service.handle : '#'}`"
                                    :key="key"
                                    class="shadow-md bg-primary-50 dark:bg-gray-900"
                         />
@@ -76,10 +76,11 @@ const messages = [
                     <Text :section-text="{ caption: { label: 'Why choose us?' }, h2: 'Your success is our work.' }" />
 
                     <div class="grid grid-cols-2 gap-y-10 gap-x-6">
-                        <ServiceHowWorksOption v-for="(item, i) of options"
+                        <ServiceFeature v-for="(item, i) of options"
                                                :key="i"
                                                v-bind="item"
                                                class="alternate_cont_bg"
+                                               icon-class="text-primary"
                         />
                     </div>
                 </div>
