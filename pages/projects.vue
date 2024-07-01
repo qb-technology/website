@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const storage_url = useRuntimeConfig().public.storage_bucket_url
-const isDark = useColorMode()
+// const storage_url = useRuntimeConfig().public.storage_bucket_url
+// const isDark = useColorMode()
 
 const integrations = [
     'cloudflare.svg', 'vercel.svg', 'aws-amplify.svg', 'digitalocean.svg', 'heroku.svg', 'netlify.svg', 'cleavr.svg', 'stormkit.webp','render.png', 'sanity.svg',
@@ -31,7 +31,7 @@ const {project} = storeToRefs(useProjectsStore())
                 <TemplateSectionV3 class="grid"
                                    :section-text="{ h2: 'Completed Projects' }"
                 >
-                    <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-16">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
                         <template v-if="project.length">
                             <ProjectListingV1 v-for="(item, i) of project"
                                           :key="i"

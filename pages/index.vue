@@ -107,7 +107,7 @@ const messages = [
                     :section-text="{ h2: 'What Our Clients Are Saying', caption: { label: 'Testimony' } }"
                     layout-orientation="center"
                 >
-                    <div class="column-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+                    <div class="column-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
                         <TestimonialV1 v-for="(item, ind) of messages"
                                        :key="ind"
                                        class="break-inside-avoid"

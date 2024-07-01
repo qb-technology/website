@@ -75,7 +75,7 @@ const messages = [
                 <div class="space-y-12">
                     <Text :section-text="{ caption: { label: 'Why choose us?' }, h2: 'Your success is our work.' }" />
 
-                    <div class="grid grid-cols-2 gap-y-10 gap-x-6">
+                    <div class="grid sm:grid-cols-2 gap-y-10 gap-x-6">
                         <ServiceFeature v-for="(item, i) of options"
                                                :key="i"
                                                v-bind="item"
