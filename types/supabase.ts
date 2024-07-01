@@ -171,6 +171,112 @@ export type Database = {
         }
         Relationships: []
       }
+      serviceApproach: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: number
+          service_id: number | null
+          step: number | null
+          title: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: number
+          service_id?: number | null
+          step?: number | null
+          title?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: number
+          service_id?: number | null
+          step?: number | null
+          title?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "serviceApproach_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      serviceFaqs: {
+        Row: {
+          answer: string | null
+          created_at: string
+          id: number
+          question: string | null
+          service_id: number | null
+        }
+        Insert: {
+          answer?: string | null
+          created_at?: string
+          id?: number
+          question?: string | null
+          service_id?: number | null
+        }
+        Update: {
+          answer?: string | null
+          created_at?: string
+          id?: number
+          question?: string | null
+          service_id?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "serviceFaqs_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      services: {
+        Row: {
+          created_at: string
+          description: string | null
+          excerpt: string | null
+          handle: string
+          icon: string | null
+          id: number
+          image: string | null
+          seo_description: string | null
+          seo_title: string | null
+          title: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          excerpt?: string | null
+          handle: string
+          icon?: string | null
+          id?: number
+          image?: string | null
+          seo_description?: string | null
+          seo_title?: string | null
+          title?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          excerpt?: string | null
+          handle?: string
+          icon?: string | null
+          id?: number
+          image?: string | null
+          seo_description?: string | null
+          seo_title?: string | null
+          title?: string | null
+        }
+        Relationships: []
+      }
       testimony: {
         Row: {
           avatar: number | null
@@ -179,6 +285,7 @@ export type Database = {
           msg: string | null
           name: string | null
           position: string | null
+          service_id: number | null
           url: string | null
         }
         Insert: {
@@ -188,6 +295,7 @@ export type Database = {
           msg?: string | null
           name?: string | null
           position?: string | null
+          service_id?: number | null
           url?: string | null
         }
         Update: {
@@ -197,6 +305,7 @@ export type Database = {
           msg?: string | null
           name?: string | null
           position?: string | null
+          service_id?: number | null
           url?: string | null
         }
         Relationships: [
@@ -205,6 +314,13 @@ export type Database = {
             columns: ["avatar"]
             isOneToOne: false
             referencedRelation: "avatar"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "testimony_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
             referencedColumns: ["id"]
           },
         ]

@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
-import type { Database } from '~/types/supabase'
 
-export const useServiceFeatureStore = defineStore({
-  id: 'serviceFeatureStore',
+export const useServiceStore = defineStore({
+  id: 'serviceStore',
   state: () => ({
+    services: [] as Array<{ title: string | null, description: string | null, icon: string | null }>,
     features: [] as Array<{ title: string | null, description: string | null, icon: string | null }>,
   }),
   actions: {
