@@ -9,7 +9,7 @@ export default defineAppConfig({
             default: {
                 size: 'xl',
             },
-            rounded: 'rounded-none',
+            // rounded: 'rounded-none',
         },
     },
 })

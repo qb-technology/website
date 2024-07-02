@@ -30,6 +30,30 @@ export type Database = {
         }
         Relationships: []
       }
+      contact_form: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: number
+          msg: string | null
+          name: string | null
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: number
+          msg?: string | null
+          name?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: number
+          msg?: string | null
+          name?: string | null
+        }
+        Relationships: []
+      }
       devProject: {
         Row: {
           created_at: string
@@ -153,6 +177,7 @@ export type Database = {
           description: string | null
           icon: string | null
           id: number
+          service_id: number | null
           title: string | null
         }
         Insert: {
@@ -160,6 +185,7 @@ export type Database = {
           description?: string | null
           icon?: string | null
           id?: number
+          service_id?: number | null
           title?: string | null
         }
         Update: {
@@ -167,9 +193,18 @@ export type Database = {
           description?: string | null
           icon?: string | null
           id?: number
+          service_id?: number | null
           title?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "service_features_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       serviceApproach: {
         Row: {

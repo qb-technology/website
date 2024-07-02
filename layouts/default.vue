@@ -14,6 +14,29 @@ const {height:footer_height} = useElementSize(footer)
 const bodyHeight = computed(()=>({
     'min-height': `calc(100vh - ${header_height.value + footer_height.value}px)`
 }))
+const social = useNuxtApp().$socialContacts
+const icons = [
+    {
+        name: 'mdi:youtube',
+        to: social.youtube
+    },
+    {
+        name: 'uil:facebook-f',
+        to: social.facebook
+    },
+    {
+        name: 'ri:twitter-x-line',
+        to: social.twitter
+    },
+    {
+        name: 'mdi:instagram',
+        to: social.instagram
+    },
+    {
+        name: 'ri:linkedin-fill',
+        to: social.linkedin
+    },
+]
 </script>
 
 <template>
@@ -34,7 +57,7 @@ const bodyHeight = computed(()=>({
              class="bg-primary-100 dark:bg-gray-950/50"
         >
             <UContainer>
-                <TemplateFooterDesktop />
+                <TemplateFooterDesktop :icons="icons" />
             </UContainer>
         </div>
     </div>
