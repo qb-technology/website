@@ -40,7 +40,7 @@ const messages = [
                                    :section-text="{ h1: 'What We Do', caption: { label: 'Services' }, p: 'Explore our range of digital services designed to boost your business. From web and app development to digital marketing, we have you covered.' }"
                 >
                     <div class="w-full relative h-fit">
-                        <NuxtImg src="/r2/projectPageHero.png"
+                        <NuxtImg src="/r2/servicePageHero.svg"
                                  :width="$device.isMobile ? 350 : 600"
                                  sizes="sm:400px md:600px"
                                  placeholder
@@ -61,7 +61,7 @@ const messages = [
                                    v-bind="service"
                                    :handle="`/services${service.handle ? '/'+service.handle : '#'}`"
                                    :key="key"
-                                   class="shadow-md bg-primary-50 dark:bg-gray-900"
+                                   class="shadow-md bg-white dark:bg-gray-900"
                         />
                     </div>
                 </TemplateSectionV2>
@@ -71,9 +71,12 @@ const messages = [
         <TemplateSectionContainer>
             <UContainer class="grid gap-12 lg:grid-cols-2">
                 <div>
-                    <img src="https://placehold.co/700"
+                    <LazyNuxtImg  src="/r2/services_why_us.svg"
+                    alt="real time worldwide success"
                          class="w-full h-full"
-                    >
+                         sizes="sm:500px md:700px"
+                                 placeholder
+                    />
                 </div>
                 <div class="space-y-12">
                     <Text :section-text="{ caption: { label: 'Why choose us?' }, h2: 'Your success is our work.' }" />
