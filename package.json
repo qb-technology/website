@@ -30,6 +30,7 @@
     "@supabase/gotrue-js": "^2.64.3",
     "@vueuse/nuxt": "^10.11.0",
     "eslint": "^9.3.0",
-    "nuxt": "^3.12.2"
+    "nuxt": "^3.12.2",
+    "nuxt-mail": "^5.0.1"
   }
 }
