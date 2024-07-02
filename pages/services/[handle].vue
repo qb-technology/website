@@ -41,6 +41,8 @@ const messages = [
                             <NuxtImg :src="`/r2/${data.image}`"
                                      :width="$device.isMobile ? 400 : 600"
                                      :alt="`${data.title} image`"
+                                     sizes="sm:400px md:600px"
+                                 placeholder
                                      class=""
                             />
                         </div>

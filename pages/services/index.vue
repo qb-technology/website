@@ -42,6 +42,7 @@ const messages = [
                     <div class="w-full relative h-fit">
                         <NuxtImg src="/r2/projectPageHero.png"
                                  :width="$device.isMobile ? 350 : 600"
+                                 sizes="sm:400px md:600px"
                                  placeholder
                                  alt="project image"
                         />

@@ -36,6 +36,8 @@ const messages = [
                     >
                         <NuxtImg v-if="colorMode.value === 'dark'"
                                  :src="`${storage_url}bazari_dark_dashboard.png`"
+                                 :width="$device.isMobile&&400 || $device.isTable&&700 || $device.isDesktop&&1200"
+                                 sizes="sm:400px md:700px lg:1200px"
                                  alt="dashboard image"
                                  placeholder
                                  format="webp"
@@ -43,6 +45,8 @@ const messages = [
                         />
                         <NuxtImg v-else
                                  :src="`${storage_url}bazari_light_dashboard.png`"
+                                 :width="$device.isMobile&&400 || $device.isTable&&700 || $device.isDesktop&&1200"
+                                 sizes="sm:400px md:700px lg:1200px"
                                  alt="dashboard image"
                                  placeholder
                                  format="webp"
