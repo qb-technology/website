@@ -1,7 +1,7 @@
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.hook('app:created',()=>{
         useAsyncData('loaders', async () =>{
-            await Promise.all([
+            return await Promise.all([
                 useGeneralStore().getData()
             ])
         })

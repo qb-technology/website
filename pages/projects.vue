@@ -19,6 +19,7 @@ const {project} = storeToRefs(useProjectsStore())
                     <div class="w-full relative h-fit">
                         <NuxtImg src="/r2/projectPageHero.png"
                                  :width="$device.isMobile ? 400 : 600"
+                                 placeholder
                                  class=""
                         />
                     </div>

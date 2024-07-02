@@ -18,6 +18,7 @@ export const useGeneralStore = defineStore({
           serviceStore.services = d.services as any
         }
       }
+      return d
     }
   }
 })

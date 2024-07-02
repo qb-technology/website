@@ -40,6 +40,7 @@ const messages = [
                         <div class="w-full relative h-fit">
                             <NuxtImg :src="`/r2/${data.image}`"
                                      :width="$device.isMobile ? 400 : 600"
+                                     :alt="`${data.title} image`"
                                      class=""
                             />
                         </div>
@@ -134,7 +135,8 @@ const messages = [
                 </UContainer>
             </div>
 
-            <UContainer>
+            <div class="cont_bg">
+                <UContainer>
                 <TemplateSectionV2
                     :section-text="{ h2: 'Get started today', p: 'We are ever ready and committed to help actualize your vision for your business. Click below to be our next success story' }"
                     layout-orientation="center"
@@ -144,6 +146,7 @@ const messages = [
                     </div>
                 </TemplateSectionV2>
             </UContainer>
+            </div>
         </div>
     </div>
 </template>
